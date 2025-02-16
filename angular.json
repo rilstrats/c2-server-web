@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "c2-server": {
+    "c2-server-web": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/c2-server",
+            "outputPath": "dist/c2-server-web",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "c2-server:build:production"
+              "buildTarget": "c2-server-web:build:production"
             },
             "development": {
-              "buildTarget": "c2-server:build:development"
+              "buildTarget": "c2-server-web:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "c2-server:build"
+            "buildTarget": "c2-server-web:build"
           }
         },
         "test": {
