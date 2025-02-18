@@ -10,9 +10,9 @@ COPY . .
 RUN ng build --configuration production
 
 FROM nginx:1-alpine AS web
-# setup
-WORKDIR /web
-# config
+# copy config
 COPY nginx.conf /etc/nginx/nginx.conf
-# hosted files
+# copy web files
 COPY --from=build /build/dist/c2-server-web/browser /usr/share/nginx/html
+# run
+EXPOSE 80
